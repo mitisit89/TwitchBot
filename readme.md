@@ -8,4 +8,4 @@
 - socat  
 
 # Todo
-- [ ] Fix mpv playlist 
+- [x] Fix mpv playlist 
