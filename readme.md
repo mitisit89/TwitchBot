@@ -9,3 +9,4 @@
 
 # Todo
 - [x] Fix mpv playlist 
+- [ ] Init song request command by twitch points 
