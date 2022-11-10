@@ -5,8 +5,7 @@
 
 - [Mpv](https://mpv.io/installation/)
 - [yt-dlp](https://github.com/yt-dlp/yt-dlp)
-
-
+- socat  
 
 # Todo
 - [ ] Fix mpv playlist 
