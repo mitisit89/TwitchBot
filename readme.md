@@ -1,4 +1,4 @@
-# Yet anoder twitch
+# Yet another twitch bot
 
 
 ## External requirements for music play
