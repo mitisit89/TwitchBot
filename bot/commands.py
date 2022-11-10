@@ -1,7 +1,7 @@
 from twitchio import Message
 from twitchio.ext import commands
 
-from config import INIT_CHANNELS, TOKEN, playlist
+from config import INIT_CHANNELS, TOKEN
 
 from .utils import add_to_playlist, run_player
 
@@ -17,7 +17,6 @@ class Bot(commands.Bot):
     async def event_ready(self) -> None:
         print(f"Logged in as | {self.nick}")
         print(f"User id is | {self.user_id}")
-        playlist()
         await run_player()
 
     async def event_message(self, message: Message):
