@@ -9,4 +9,4 @@
 
 
 # Todo
-[] Fix mpv playlist 
+- [ ] Fix mpv playlist 
