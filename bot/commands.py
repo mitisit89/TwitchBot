@@ -35,7 +35,7 @@ class Bot(commands.Bot):
     async def song_request(self, ctx: commands.Context):
         # Command for song request
         print(ctx.message.content)
-        add_to_playlist(ctx.message.content[4:])
+        await add_to_playlist(ctx.message.content[4:])
 
 
 bot = Bot()

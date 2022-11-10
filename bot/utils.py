@@ -1,12 +1,17 @@
 import asyncio
+import json
 
+async def add_to_playlist(song: str):
+    cmd=json.dumps({"command": ["loadfile",song,"append-play"]})
 
-def add_to_playlist(song: str):
-    with open("playlist.m3u", "a") as playlist:
-        playlist.write(song + "\n")
+    await asyncio.create_subprocess_shell(f"echo '{cmd}' | socat - /tmp/mpvsocket")
 
 
 async def run_player():
     await asyncio.create_subprocess_exec(
-        "mpv", "playlist.m3u", "--no-terminal", "--keep-open=yes",'--input-ipc-server=/tmp/mpvsocket' "2&>1 1>/dev/null"
+        "mpv",
+        "--player-operation-mode=pseudo-gui",
+        "--no-terminal",
+        "--keep-open=yes",
+        "--input-ipc-server=/tmp/mpvsocket",
     )
