@@ -1,8 +1,9 @@
 import asyncio
 import json
 
+
 async def add_to_playlist(song: str):
-    cmd=json.dumps({"command": ["loadfile",song,"append-play"]})
+    cmd = json.dumps({"command": ["loadfile", song, "append-play"]})
 
     await asyncio.create_subprocess_shell(f"echo '{cmd}' | socat - /tmp/mpvsocket")
 
