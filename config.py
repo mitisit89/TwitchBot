@@ -4,7 +4,7 @@ import dotenv
 
 dotenv.load_dotenv(".env")
 TOKEN = os.getenv("TOKEN")
-INIT_CHANNELS: list[str] = ["panmitisit"]
+INIT_CHANNELS: list[str] = ["..."]
 
 
 LOGO: dict[str, str] = {
