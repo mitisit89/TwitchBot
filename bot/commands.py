@@ -1,9 +1,9 @@
 from twitchio import Message
 from twitchio.ext import commands
 
-from config import INIT_CHANNELS, LOGO, TOKEN
+from config import INIT_CHANNELS, TOKEN
 
-from .utils import add_to_playlist, run_player
+from .utils import add_to_playlist, get_os_logo, run_player
 
 
 class Bot(commands.Bot):
@@ -37,7 +37,8 @@ class Bot(commands.Bot):
 
     @commands.command(name="btw")
     async def by_the_way(self, ctx: commands.Context):
-        await ctx.send(f"{LOGO.get('arch')}")
+        logo = await get_os_logo()
+        await ctx.send(f"{logo}")
 
 
 bot = Bot()

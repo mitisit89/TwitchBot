@@ -8,7 +8,7 @@ INIT_CHANNELS: list[str] = ["..."]
 
 
 LOGO: dict[str, str] = {
-    "arch": """
+    "Arch Linux": """
 ⣿⣿⣿⣿⣿⣿⣿⣿⣿⠏⠹⣿⣿⣿⣿⣿⣿⣿⣿⣿
 ⣿⣿⣿⣿⣿⣿⣿⣿⡟⠀⠀⢻⣿⣿⣿⣿⣿⣿⣿⣿
 ⣿⣿⣿⣿⣿⣿⣿⡟⠀⠀⠀⠀⢻⣿⣿⣿⣿⣿⣿⣿

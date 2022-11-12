@@ -1,6 +1,17 @@
 import asyncio
 import json
 
+from config import LOGO
+
+
+async def get_os_logo() -> str | None:
+    lsb_release = await asyncio.subprocess.create_subprocess_shell(
+        "lsb_release -sd", stdout=asyncio.subprocess.PIPE
+    )
+    output, err = await lsb_release.communicate()
+    logo = output.decode().rstrip().replace('\"', '')
+    return LOGO.get(logo)
+
 
 async def add_to_playlist(song: str):
     cmd = json.dumps({"command": ["loadfile", song, "append-play"]})
