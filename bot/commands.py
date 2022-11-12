@@ -1,7 +1,7 @@
 from twitchio import Message
 from twitchio.ext import commands
 
-from config import INIT_CHANNELS, TOKEN
+from config import INIT_CHANNELS, LOGO, TOKEN
 
 from .utils import add_to_playlist, run_player
 
@@ -33,8 +33,11 @@ class Bot(commands.Bot):
     @commands.command(name="sr")
     async def song_request(self, ctx: commands.Context):
         # Command for song request
-        print(ctx.message.content)
         await add_to_playlist(ctx.message.content[4:])
+
+    @commands.command(name="btw")
+    async def by_the_way(self, ctx: commands.Context):
+        await ctx.send(f"{LOGO.get('arch')}")
 
 
 bot = Bot()
