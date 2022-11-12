@@ -1,5 +1,5 @@
 from twitchio import Message
-from twitchio.ext import commands
+from twitchio.ext import commands, routines
 
 from config import INIT_CHANNELS, TOKEN
 
@@ -18,6 +18,10 @@ class Bot(commands.Bot):
         print(f"Logged in as | {self.nick}")
         print(f"User id is | {self.user_id}")
         await run_player()
+
+    @routines.routine(minutes=10)
+    async def info_massage(self):
+        print("Your ad could have been here ")
 
     async def event_message(self, message: Message):
         if message.echo:
